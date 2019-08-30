@@ -146,7 +146,7 @@ struct vary_node **second_pass()
             {
                 knob = (struct vary_node *)malloc(sizeof(struct vary_node));
                 strncpy(knob->name, op[i].op.vary.p->name, sizeof(knob->name));
-                knob->value = d * (start_frame - j) + start_val;
+                knob->value = d * (j - start_frame) + start_val;
                 knob->next = knobs[j];
                 knobs[j] = knob;
             }
